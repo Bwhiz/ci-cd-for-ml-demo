@@ -1,21 +1,3 @@
-name: CI demo
-
-on:
-    push:
-        branches: ["main"]
-    pull_request:
-        branches: ["main"]
-
-jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Run a multi line script
-              run: |
-                echo "Hello it's Bwhiz here"
-                echo "This is just a demo."
-
----
 name: PR demo
 
 on:
