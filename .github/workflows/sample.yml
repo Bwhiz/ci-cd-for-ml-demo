@@ -1,0 +1,14 @@
+name: CI demo
+
+on:
+    push:
+        branches: ["main"]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run a multi line script
+              run: |
+                echo Hello it's Bwhiz here
+                echo This is just a demo.
