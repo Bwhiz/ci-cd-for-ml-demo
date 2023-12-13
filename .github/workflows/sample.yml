@@ -3,6 +3,8 @@ name: CI demo
 on:
     push:
         branches: ["main"]
+    pull_request:
+        branches: ["main"]
 
 jobs:
     build:
@@ -12,3 +14,24 @@ jobs:
               run: |
                 echo "Hello it's Bwhiz here"
                 echo "This is just a demo."
+
+---
+name: PR demo
+
+on:
+    pull_request:
+        branches: ["main"]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v3
+            - name: Setup Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: 3.9
+            - name: Run Python Script
+              run: |
+                  echo "hello_world.py"
+                  python hello_world.py
